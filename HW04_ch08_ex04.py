@@ -14,7 +14,8 @@
 
 
 def any_lowercase1(s):
-    """Explain what is wrong, if anything, here.
+    """This function returns True/False after evaluating the first letter, which will
+        cause it to fail if a word has the first letter in uppercase followed by all lower letters, for example.
     """
     for c in s:
         if c.islower():
@@ -24,7 +25,8 @@ def any_lowercase1(s):
 
 
 def any_lowercase2(s):
-    """Explain what is wrong, if anything, here.
+    """This function evaluates if the lowercase letter c is a lowercase letter, instead of each character in s
+        and will always return True irrespective of the string
     """
     for c in s:
         if 'c'.islower():
@@ -34,7 +36,10 @@ def any_lowercase2(s):
 
 
 def any_lowercase3(s):
-    """Explain what is wrong, if anything, here.
+    """This function checks if every character in s is a lowercase character and sets flag to True if it is, but
+        the flag is returned only after the for loop ends - which means that value in flag when it is being 
+        returned is set is based on the last character in the string. This function fails when the the last character
+        is an uppercase character, inspite of s having other lowercase characters
     """
     for c in s:
         flag = c.islower()
@@ -42,7 +47,8 @@ def any_lowercase3(s):
 
 
 def any_lowercase4(s):
-    """Explain what is wrong, if anything, here.
+    """This function sets flag to True even if one lowercase letter is present in the word because of the 'or' operator
+        It will return False only for an all uppercase letter'd string
     """
     flag = False
     for c in s:
@@ -51,7 +57,8 @@ def any_lowercase4(s):
 
 
 def any_lowercase5(s):
-    """Explain what is wrong, if anything, here.
+    """This function returns False when an uppercase letter is found, returns True only if all the letters in the string 
+        are lowercase
     """
     for c in s:
         if not c.islower():
@@ -66,7 +73,13 @@ def main():
     # call that function with a string for which the function returns
     # incorrectly.
     # ex.: any_lowercase_("thisstringmessesupthefunction")
-    print("Hello World!")
+    print(any_lowercase1("Hello!"))
+
+    print(any_lowercase2("HELLO"))
+
+    print(any_lowercase3("hellO"))
+
+    print(any_lowercase5('hEllO'))
 
 
 if __name__ == '__main__':

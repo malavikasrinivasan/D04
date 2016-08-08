@@ -26,10 +26,23 @@
 # Body
 
 
+def eval_loop():
+    input_string = " "
+    while input_string.lower() != 'done':
+        try:
+            input_string = input("Enter the expression you want to evaluate on the Python interpreter. Enter Done if you want to exit.\n")
+            if input_string.lower() != 'done':
+                result = eval(input_string)
+                print("Result :", result)
+
+        except:
+            print("Not a valid expression!")
+
 ###############################################################################
+
+
 def main():
-    pass  # Remove this line and uncomment below once eval_loop is defined.
-    # eval_loop()
+    eval_loop()
 
 if __name__ == '__main__':
     main()

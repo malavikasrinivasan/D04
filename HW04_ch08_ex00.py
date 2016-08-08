@@ -22,12 +22,24 @@
 # Body
 
 
+def count(word, letter):
+    count = 0
+    for char in word:
+        if char == letter:
+            count += 1
+    print(count)
+
+
 ###############################################################################
 def main():
 
     # Remove print("Hello World!") and add several functions calls to count()
     # below, passing various strings and letters
-    print("Hello World!")
+    count('hello', 'l')
+    count('banana', 'a')
+    count('evaluate', 'e')
+    count('monkey', 'p')
+    count('', 'd')
 
 
 if __name__ == '__main__':

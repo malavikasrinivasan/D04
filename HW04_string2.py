@@ -18,7 +18,12 @@
 # Return the resulting string.
 def verbing(s):
     # +++your code here+++
-    return
+    if len(s) >= 3 and s[-3:] == 'ing':
+        return s+'ly'
+    elif len(s) >= 3:
+        return s+'ing'
+    else:
+        return s
 
 
 # E. not_bad
@@ -31,9 +36,12 @@ def verbing(s):
 # This dinner is good!
 def not_bad(s):
     # +++your code here+++
-    return
-
-
+    not_start_loc = s.find('not')
+    bad_start_loc = s.find('bad')
+    if not_start_loc < bad_start_loc and bad_start_loc != -1 and not_start_loc != -1:
+        return s.replace(s[not_start_loc:(bad_start_loc+3)], 'good')
+    else:
+        return s
 # F. front_back
 # Consider dividing a string into two halves.
 # If the length is even, the front and back halves are the same length.
@@ -41,9 +49,27 @@ def not_bad(s):
 # e.g. 'abcde', the front half is 'abc', the back half 'de'.
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
+
+
+def split_string(s):
+    splits = []
+    len_s = len(s)
+    mid_s = int(len_s/2)
+    if len_s % 2 == 0:
+        splits.append(s[:mid_s])
+        splits.append(s[mid_s:])
+        return splits
+    else:
+        splits.append(s[:mid_s + 1])
+        splits.append(s[mid_s + 1:])
+        return splits
+
+
 def front_back(a, b):
     # +++your code here+++
-    return
+    splits_a = split_string(a)
+    splits_b = split_string(b)
+    return splits_a[0]+splits_b[0]+splits_a[1]+splits_b[1]
 
 
 # Simple provided test() function used in main() to print
